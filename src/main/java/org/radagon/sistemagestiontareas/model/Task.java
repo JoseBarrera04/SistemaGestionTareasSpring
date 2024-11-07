@@ -1,8 +1,12 @@
 package org.radagon.sistemagestiontareas.model;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 
 @Entity
+@Getter
+@Setter
 public class Task {
     //Constructor
     @Id
@@ -11,7 +15,7 @@ public class Task {
 
     private String title;
     private String description;
-    private String status;
+    private boolean completed;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
